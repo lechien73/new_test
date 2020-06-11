@@ -1,12 +1,14 @@
 let inputs = document.getElementsByTagName("input");
 let url = new URL(document.URL);
+let completed;
+let count;
 
 for (let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener("click", function () {
         let radios = document.querySelectorAll('[type="radio"]');
         let runningTotal = 0;
-        let count = radios.length / 6;
-        let completed = 0;
+        count = radios.length / 6;
+        completed = 0;
 
         for (let s = 0; s < radios.length; s++) {
             if (radios[s].checked) {
@@ -44,6 +46,14 @@ if (url.searchParams.get("ll")) {
 }
 
 document.getElementById("sendForm").addEventListener("click", function() {
-    score = document.getElementById("score").innerText
-    confirm("You are about to submit this assessment, giving an overall grade of " + score);
+
+    if (count == completed) {
+        score = document.getElementById("score").innerText
+        if confirm(`You are about to submit this assessment, giving an overall grade of ${score}\nAre you sure?`) {
+            document.getElementById("assessmentForm").submit();
+            window.location("thanks.html")
+        }
+    } else {
+        alert("You have not completed all of the required questions")
+    }
 })
