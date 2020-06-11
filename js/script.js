@@ -50,7 +50,7 @@ document.getElementById("sendForm").addEventListener("click", function() {
     req1 = document.getElementById("data1")
     req2 = document.getElementById("data2")
 
-    if (count == completed) && (req1.checked) && (req2.checked) {
+    if (count == completed && req1.checked && req2.checked) {
         score = document.getElementById("score").innerText
         if confirm(`You are about to submit this assessment, giving an overall grade of ${score}\nAre you sure?`) {
             document.getElementById("assessmentForm").submit();
