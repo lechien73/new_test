@@ -42,3 +42,8 @@ if (url.searchParams.get("gh")) {
 if (url.searchParams.get("ll")) {
     document.getElementById("live_url").innerText = url.searchParams.get("ll");
 }
+
+document.getElementById("sendForm").addEventListener("click", function() {
+    score = document.getElementById("score").innerText
+    confirm("You are about to submit this assessment, giving an overall grade of " + score);
+})
