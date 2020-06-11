@@ -6,12 +6,16 @@ for (let i = 0; i < inputs.length; i++) {
         let radios = document.querySelectorAll('[type="radio"]');
         let runningTotal = 0;
         let count = radios.length / 6;
+        let completed = 0;
 
         for (let s = 0; s < radios.length; s++) {
             if (radios[s].checked) {
                 runningTotal += (parseInt(radios[s].value) / count) * 20;
+                completed += 1;
             }
         }
+        document.getElementById("completed").innerText =
+            completed + "/" + count;
         document.getElementById("score").innerText =
             runningTotal.toFixed(2) + "%";
     });
