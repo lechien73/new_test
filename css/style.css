@@ -1,0 +1,21 @@
+body {
+    padding-top: 50px;
+}
+
+input {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+label {
+    margin-top: -10px;
+}
+
+header {
+    background: #eee;
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
