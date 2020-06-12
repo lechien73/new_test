@@ -50,6 +50,8 @@ if (url.searchParams.get("ll")) {
 }
 
 document.getElementById("sendForm").addEventListener("click", function () {
+    document.getElementById("timestamp").value = new Date(Date.now());
+
     req1 = document.getElementById("data1");
     req2 = document.getElementById("data2");
 
