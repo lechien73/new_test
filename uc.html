@@ -1,560 +1,1006 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+        />
+        <link rel="stylesheet" href="css/style.css" />
+        <title>User Centric Full Stack Development</title>
+    </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-	<link rel="stylesheet" href="css/style.css">
-	<title>User Centric Full Stack Development</title>
-</head>
+    <body>
+        <header class="container-fluid">
+            <div class="row">
+                <div class="col-sm-2">
+                    <h2 id="score">0%</h2>
+                </div>
+                <div class="col-sm-2">
+                    <h6>Questions completed</h6>
+                    <h4 id="completed">0</h4>
+                </div>
+                <div class="col-sm-3">
+                    Student ID: <strong><span id="student_id"></span></strong
+                    ><br />
+                    Record ID: <strong><span id="record_id"></span></strong>
+                </div>
+                <div class="col-sm-3">
+                    GitHub Link: <strong><span id="github_url"></span></strong
+                    ><br />
+                    Deployed Link: <strong><span id="live_url"></span></strong>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-offset-3">
+                    <form
+                        id="assessmentForm"
+                        method="POST"
+                        action="https://hooks.zapier.com/hooks/catch/4753778/osgg2e0/"
+                    >
+                        <input type="hidden" name="sid" id="sid" />
+                        <input type="hidden" name="rid" id="rid" />
+                        <input type="hidden" name="gh" id="gh" />
+                        <input type="hidden" name="ll" id="ll" />
+                        <h2>Assessor Details</h2>
+                        <fieldset>
+                            <label for="email">Assessor's Email Address</label>
+                            <input
+                                type="email"
+                                required
+                                name="email"
+                                id="email"
+                            />
+                            <label for="email">Assessor's Name</label>
+                            <input type="text" required name="name" id="name" />
+                        </fieldset>
 
-<body>
-	<header class="container-fluid">
-		<div class="row">
-			<div class="col-sm-2">
-				<h2 id="score">0%</h2>
-			</div>
-			<div class="col-sm-2">
-				<h6>Questions completed</h6>
-				<h4 id="completed">0</h4>
-			</div>
-			<div class="col-sm-3">
-				Student ID: <strong><span id="student_id"></span></strong><br>
-				Record ID: <strong><span id="record_id"></span></strong>
-			</div>
-			<div class="col-sm-3">
-				GitHub Link: <strong><span id="github_url"></span></strong><br>
-				Deployed Link: <strong><span id="live_url"></span></strong>
-			</div>
-		</div>
-	</header>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-6 col-offset-3">
-				<form id="assessmentForm" method="POST" action="https://hooks.zapier.com/hooks/catch/4753778/osgg2e0/">
-                    <input type="hidden" name="sid" id="sid">
-					<input type="hidden" name="rid" id="rid">
-					<input type="hidden" name="gh" id="gh">
-					<input type="hidden" name="ll" id="ll">
-					<h2>Assessor Details</h2>
-					<fieldset>
-						<input type="email" required name="email" id="email">
-						<label for="email">Assessor's Email Address</label>
-					</fieldset>
+                        <h2>Usability and Real-world application</h2>
+                        <fieldset>
+                            <legend>Project purpose</legend>
+                            <p class="small">
+                                The project's documentation (either in the
+                                readme, or a separate file) provides a clear
+                                rationale for the development of this project,
+                                addressing a particular set of user stories (in
+                                any format) for a well-defined target
+                                audience(s).
+                            </p>
+                            <input type="radio" id="q1-0" name="q1" value="0" />
+                            <label for="q1-0">0</label>
+                            <input type="radio" id="q1-1" name="q1" value="1" />
+                            <label for="q1-1">1</label>
+                            <input type="radio" id="q1-2" name="q1" value="2" />
+                            <label for="q1-2">2</label>
+                            <input type="radio" id="q1-3" name="q1" value="3" />
+                            <label for="q1-3">3</label>
+                            <input type="radio" id="q1-4" name="q1" value="4" />
+                            <label for="q1-4">4</label>
+                            <input type="radio" id="q1-5" name="q1" value="5" />
+                            <label for="q1-5">5</label>
+                        </fieldset>
 
-					<h2>Usability and Real-world application</h2>
-					<fieldset>
-						<legend>Project purpose</legend>
-						<p class="small">The project's documentation (either in the readme, or a separate file) provides
-							a clear
-							rationale for the development of
-							this project, addressing a particular set of user stories (in any format) for a well-defined
-							target audience(s).</p>
-						<input type="radio" id="q1-0" name="q1" value="0">
-						<label for="q1-0">0</label>
-						<input type="radio" id="q1-1" name="q1" value="1">
-						<label for="q1-1">1</label>
-						<input type="radio" id="q1-2" name="q1" value="2">
-						<label for="q1-2">2</label>
-						<input type="radio" id="q1-3" name="q1" value="3">
-						<label for="q1-3">3</label>
-						<input type="radio" id="q1-4" name="q1" value="4">
-						<label for="q1-4">4</label>
-						<input type="radio" id="q1-5" name="q1" value="5">
-						<label for="q1-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>UX design</legend>
+                            <p class="small">
+                                The project's documentation (either in the
+                                readme, or a separate file) describes the UX
+                                design work undertaken for this project and the
+                                reasoning behind it. Wireframes and/or mockups
+                                (in any format viewable inside the browser) are
+                                included, or linked to.
+                            </p>
+                            <input type="radio" id="q2-0" name="q2" value="0" />
+                            <label for="q2-0">0</label>
+                            <input type="radio" id="q2-1" name="q2" value="1" />
+                            <label for="q2-1">1</label>
+                            <input type="radio" id="q2-2" name="q2" value="2" />
+                            <label for="q2-2">2</label>
+                            <input type="radio" id="q2-3" name="q2" value="3" />
+                            <label for="q2-3">3</label>
+                            <input type="radio" id="q2-4" name="q2" value="4" />
+                            <label for="q2-4">4</label>
+                            <input type="radio" id="q2-5" name="q2" value="5" />
+                            <label for="q2-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>UX design</legend>
-						<p class="small">The project's documentation (either in the readme, or a separate file)
-							describes the UX
-							design work undertaken for this
-							project and the reasoning behind it. Wireframes and/or mockups (in any format viewable
-							inside the browser) are included,
-							or linked to.</p>
-						<input type="radio" id="q2-0" name="q2" value="0">
-						<label for="q2-0">0</label>
-						<input type="radio" id="q2-1" name="q2" value="1">
-						<label for="q2-1">1</label>
-						<input type="radio" id="q2-2" name="q2" value="2">
-						<label for="q2-2">2</label>
-						<input type="radio" id="q2-3" name="q2" value="3">
-						<label for="q2-3">3</label>
-						<input type="radio" id="q2-4" name="q2" value="4">
-						<label for="q2-4">4</label>
-						<input type="radio" id="q2-5" name="q2" value="5">
-						<label for="q2-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Suitability for purpose</legend>
+                            <p class="small">
+                                The site's design, as implemented, provides a
+                                good solution to the users' demands. A regular
+                                user would not immediately think "there's a much
+                                better way to do this".
+                            </p>
+                            <input type="radio" id="q3-0" name="q3" value="0" />
+                            <label for="q3-0">0</label>
+                            <input type="radio" id="q3-1" name="q3" value="1" />
+                            <label for="q3-1">1</label>
+                            <input type="radio" id="q3-2" name="q3" value="2" />
+                            <label for="q3-2">2</label>
+                            <input type="radio" id="q3-3" name="q3" value="3" />
+                            <label for="q3-3">3</label>
+                            <input type="radio" id="q3-4" name="q3" value="4" />
+                            <label for="q3-4">4</label>
+                            <input type="radio" id="q3-5" name="q3" value="5" />
+                            <label for="q3-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Suitability for purpose</legend>
-						<p class="small">The site's design, as implemented, provides a good solution to the users'
-							demands. A regular
-							user would not immediately
-							think "there's a much better way to do this".</p>
-						<input type="radio" id="q3-0" name="q3" value="0">
-						<label for="q3-0">0</label>
-						<input type="radio" id="q3-1" name="q3" value="1">
-						<label for="q3-1">1</label>
-						<input type="radio" id="q3-2" name="q3" value="2">
-						<label for="q3-2">2</label>
-						<input type="radio" id="q3-3" name="q3" value="3">
-						<label for="q3-3">3</label>
-						<input type="radio" id="q3-4" name="q3" value="4">
-						<label for="q3-4">4</label>
-						<input type="radio" id="q3-5" name="q3" value="5">
-						<label for="q3-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Navigation</legend>
+                            <p class="small">
+                                Resources are easy to find and navigation is
+                                easy to reason about. All navigation links work
+                                well and there is never a need to use the Back
+                                button to move through the site.
+                            </p>
+                            <input type="radio" id="q4-0" name="q4" value="0" />
+                            <label for="q4-0">0</label>
+                            <input type="radio" id="q4-1" name="q4" value="1" />
+                            <label for="q4-1">1</label>
+                            <input type="radio" id="q4-2" name="q4" value="2" />
+                            <label for="q4-2">2</label>
+                            <input type="radio" id="q4-3" name="q4" value="3" />
+                            <label for="q4-3">3</label>
+                            <input type="radio" id="q4-4" name="q4" value="4" />
+                            <label for="q4-4">4</label>
+                            <input type="radio" id="q4-5" name="q4" value="5" />
+                            <label for="q4-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Navigation</legend>
-						<p class="small">Resources are easy to find and navigation is easy to reason about. All
-							navigation links work
-							well and there is never a
-							need to use the Back button to move through the site.</p>
-						<input type="radio" id="q4-0" name="q4" value="0">
-						<label for="q4-0">0</label>
-						<input type="radio" id="q4-1" name="q4" value="1">
-						<label for="q4-1">1</label>
-						<input type="radio" id="q4-2" name="q4" value="2">
-						<label for="q4-2">2</label>
-						<input type="radio" id="q4-3" name="q4" value="3">
-						<label for="q4-3">3</label>
-						<input type="radio" id="q4-4" name="q4" value="4">
-						<label for="q4-4">4</label>
-						<input type="radio" id="q4-5" name="q4" value="5">
-						<label for="q4-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Ease of use</legend>
+                            <p class="small">
+                                The site is intuitive to use and does not
+                                confuse or surprise the user in a negative way.
+                            </p>
+                            <input type="radio" id="q5-0" name="q5" value="0" />
+                            <label for="q5-0">0</label>
+                            <input type="radio" id="q5-1" name="q5" value="1" />
+                            <label for="q5-1">1</label>
+                            <input type="radio" id="q5-2" name="q5" value="2" />
+                            <label for="q5-2">2</label>
+                            <input type="radio" id="q5-3" name="q5" value="3" />
+                            <label for="q5-3">3</label>
+                            <input type="radio" id="q5-4" name="q5" value="4" />
+                            <label for="q5-4">4</label>
+                            <input type="radio" id="q5-5" name="q5" value="5" />
+                            <label for="q5-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Ease of use</legend>
-						<p class="small">The site is intuitive to use and does not confuse or surprise the user in a
-							negative way.</p>
-						<input type="radio" id="q5-0" name="q5" value="0">
-						<label for="q5-0">0</label>
-						<input type="radio" id="q5-1" name="q5" value="1">
-						<label for="q5-1">1</label>
-						<input type="radio" id="q5-2" name="q5" value="2">
-						<label for="q5-2">2</label>
-						<input type="radio" id="q5-3" name="q5" value="3">
-						<label for="q5-3">3</label>
-						<input type="radio" id="q5-4" name="q5" value="4">
-						<label for="q5-4">4</label>
-						<input type="radio" id="q5-5" name="q5" value="5">
-						<label for="q5-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Information architecture</legend>
+                            <p class="small">
+                                All information displayed on the site is
+                                presented in an organised and easily readable
+                                fashion. Whenever relevant, the site provides
+                                interactivity to make the information easier to
+                                consume.
+                            </p>
+                            <input type="radio" id="q6-0" name="q6" value="0" />
+                            <label for="q6-0">0</label>
+                            <input type="radio" id="q6-1" name="q6" value="1" />
+                            <label for="q6-1">1</label>
+                            <input type="radio" id="q6-2" name="q6" value="2" />
+                            <label for="q6-2">2</label>
+                            <input type="radio" id="q6-3" name="q6" value="3" />
+                            <label for="q6-3">3</label>
+                            <input type="radio" id="q6-4" name="q6" value="4" />
+                            <label for="q6-4">4</label>
+                            <input type="radio" id="q6-5" name="q6" value="5" />
+                            <label for="q6-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Information architecture</legend>
-						<p class="small">All information displayed on the site is presented in an organised and easily
-							readable
-							fashion. Whenever relevant, the
-							site provides interactivity to make the information easier to consume.</p>
-						<input type="radio" id="q6-0" name="q6" value="0">
-						<label for="q6-0">0</label>
-						<input type="radio" id="q6-1" name="q6" value="1">
-						<label for="q6-1">1</label>
-						<input type="radio" id="q6-2" name="q6" value="2">
-						<label for="q6-2">2</label>
-						<input type="radio" id="q6-3" name="q6" value="3">
-						<label for="q6-3">3</label>
-						<input type="radio" id="q6-4" name="q6" value="4">
-						<label for="q6-4">4</label>
-						<input type="radio" id="q6-5" name="q6" value="5">
-						<label for="q6-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>
+                                Usability and real-world application comments
+                            </legend>
+                            <p class="small">
+                                What general feedback do you have for the
+                                student about this aspect of the project? What
+                                stood out as particularly good? What can be
+                                improved? Please give the feedback in the same
+                                order as the above criteria. For each criterion
+                                give one example of what could be approved if
+                                it’s a low or average (<=3) score and one
+                                example of what is excellent if it’s a high
+                                score(>=4).
+                            </p>
+                            <textarea name="section1" cols="60"></textarea>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Usability and real-world application comments</legend>
-						<p class="small">What general feedback do you have for the student about this aspect of the
-							project? What
-							stood out as particularly good?
-							What can be improved? Please give the feedback in the same order as the above criteria. For
-							each criterion give one
-							example of what could be approved if it’s a low or average (<=3) score and one example of
-								what is excellent if it’s a high score(>=4).</p>
-						<textarea name="section1" cols=60></textarea>
-					</fieldset>
+                        <h2>Layout and Visual Impact</h2>
 
-					<h2>Layout and Visual Impact</h2>
+                        <fieldset>
+                            <legend>Responsive Design</legend>
+                            <p class="small">
+                                Check the site on multiple device sizes. The
+                                site should incorporate use of Bootstrap grid
+                                classes or CSS media queries to ensure that
+                                markup reflows well to fit on all screen sizes.
+                                One way to get "Greatly Exceeds Expectations" on
+                                this criterion is by using customised elements
+                                for different screen sizes to effectively adapt
+                                the interface to the device.
+                            </p>
+                            <input type="radio" id="q7-0" name="q7" value="0" />
+                            <label for="q7-0">0</label>
+                            <input type="radio" id="q7-1" name="q7" value="1" />
+                            <label for="q7-1">1</label>
+                            <input type="radio" id="q7-2" name="q7" value="2" />
+                            <label for="q7-2">2</label>
+                            <input type="radio" id="q7-3" name="q7" value="3" />
+                            <label for="q7-3">3</label>
+                            <input type="radio" id="q7-4" name="q7" value="4" />
+                            <label for="q7-4">4</label>
+                            <input type="radio" id="q7-5" name="q7" value="5" />
+                            <label for="q7-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Responsive Design</legend>
-						<p class="small">Check the site on multiple device sizes. The site should incorporate use of
-							Bootstrap grid classes or CSS media queries
-							to ensure that markup reflows well to fit on all screen sizes. One way to get "Greatly
-							Exceeds Expectations" on this
-							criterion is by using customised elements for different screen sizes to effectively adapt
-							the interface to the device.</p>
-						<input type="radio" id="q7-0" name="q7" value="0">
-						<label for="q7-0">0</label>
-						<input type="radio" id="q7-1" name="q7" value="1">
-						<label for="q7-1">1</label>
-						<input type="radio" id="q7-2" name="q7" value="2">
-						<label for="q7-2">2</label>
-						<input type="radio" id="q7-3" name="q7" value="3">
-						<label for="q7-3">3</label>
-						<input type="radio" id="q7-4" name="q7" value="4">
-						<label for="q7-4">4</label>
-						<input type="radio" id="q7-5" name="q7" value="5">
-						<label for="q7-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Image Presentation</legend>
+                            <p class="small">
+                                Images and graphics are in proportion and
+                                consistent in their dimensions and resolution
+                                unless deliberately modified.
+                            </p>
+                            <input type="radio" id="q8-0" name="q8" value="0" />
+                            <label for="q8-0">0</label>
+                            <input type="radio" id="q8-1" name="q8" value="1" />
+                            <label for="q8-1">1</label>
+                            <input type="radio" id="q8-2" name="q8" value="2" />
+                            <label for="q8-2">2</label>
+                            <input type="radio" id="q8-3" name="q8" value="3" />
+                            <label for="q8-3">3</label>
+                            <input type="radio" id="q8-4" name="q8" value="4" />
+                            <label for="q8-4">4</label>
+                            <input type="radio" id="q8-5" name="q8" value="5" />
+                            <label for="q8-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Image Presentation</legend>
-						<p class="small">Images and graphics are in proportion and consistent in their dimensions and
-							resolution unless deliberately modified.</p>
-						<input type="radio" id="q8-0" name="q8" value="0">
-						<label for="q8-0">0</label>
-						<input type="radio" id="q8-1" name="q8" value="1">
-						<label for="q8-1">1</label>
-						<input type="radio" id="q8-2" name="q8" value="2">
-						<label for="q8-2">2</label>
-						<input type="radio" id="q8-3" name="q8" value="3">
-						<label for="q8-3">3</label>
-						<input type="radio" id="q8-4" name="q8" value="4">
-						<label for="q8-4">4</label>
-						<input type="radio" id="q8-5" name="q8" value="5">
-						<label for="q8-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Colour Scheme and Typography</legend>
+                            <p class="small">
+                                The colour scheme used on the site is
+                                consistent, and never hinders readability, or in
+                                any way obscures the content. The font typeface
+                                and size is appropriate for the purpose. All
+                                formatting is readable and consistent unless
+                                deliberately modified.
+                            </p>
+                            <input type="radio" id="q9-0" name="q9" value="0" />
+                            <label for="q9-0">0</label>
+                            <input type="radio" id="q9-1" name="q9" value="1" />
+                            <label for="q9-1">1</label>
+                            <input type="radio" id="q9-2" name="q9" value="2" />
+                            <label for="q9-2">2</label>
+                            <input type="radio" id="q9-3" name="q9" value="3" />
+                            <label for="q9-3">3</label>
+                            <input type="radio" id="q9-4" name="q9" value="4" />
+                            <label for="q9-4">4</label>
+                            <input type="radio" id="q9-5" name="q9" value="5" />
+                            <label for="q9-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Colour Scheme and Typography</legend>
-						<p class="small">The colour scheme used on the site is consistent, and never hinders
-							readability, or in any way obscures the content. The
-							font typeface and size is appropriate for the purpose. All formatting is readable and
-							consistent unless deliberately
-							modified.</p>
-						<input type="radio" id="q9-0" name="q9" value="0">
-						<label for="q9-0">0</label>
-						<input type="radio" id="q9-1" name="q9" value="1">
-						<label for="q9-1">1</label>
-						<input type="radio" id="q9-2" name="q9" value="2">
-						<label for="q9-2">2</label>
-						<input type="radio" id="q9-3" name="q9" value="3">
-						<label for="q9-3">3</label>
-						<input type="radio" id="q9-4" name="q9" value="4">
-						<label for="q9-4">4</label>
-						<input type="radio" id="q9-5" name="q9" value="5">
-						<label for="q9-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Layout and visual impact comments</legend>
+                            <p class="small">
+                                What general feedback do you have for the
+                                student about this aspect of the project? What
+                                stood out as particularly good? What can be
+                                improved? Please give the feedback in the same
+                                order as the above criteria. For each criterion
+                                give one example of what could be approved if
+                                it’s a low or average (<=3) score and one
+                                example of what is excellent if it’s a high
+                                score(>=4).
+                            </p>
+                            <textarea name="section2" cols="60"></textarea>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Layout and visual impact comments</legend>
-						<p class="small">What general feedback do you have for the student about this aspect of the
-							project? What
-							stood out as particularly good?
-							What can be improved? Please give the feedback in the same order as the above criteria. For
-							each criterion give one
-							example of what could be approved if it’s a low or average (<=3) score and one example of
-								what is excellent if it’s a high score(>=4).</p>
-						<textarea name="section2" cols=60></textarea>
-					</fieldset>
+                        <h2>Code Quality</h2>
 
-					<h2>Code Quality</h2>
+                        <fieldset>
+                            <legend>Appropriate Use of HTML</legend>
+                            <p class="small">
+                                HTML is valid and well-indented. The best tag is
+                                used for each purpose. The code includes
+                                semantic HTML5 elements wherever relevant. There
+                                is no unneeded or commented-out markup.
+                            </p>
+                            <input
+                                type="radio"
+                                id="q10-0"
+                                name="q10"
+                                value="0"
+                            />
+                            <label for="q10-0">0</label>
+                            <input
+                                type="radio"
+                                id="q10-1"
+                                name="q10"
+                                value="1"
+                            />
+                            <label for="q10-1">1</label>
+                            <input
+                                type="radio"
+                                id="q10-2"
+                                name="q10"
+                                value="2"
+                            />
+                            <label for="q10-2">2</label>
+                            <input
+                                type="radio"
+                                id="q10-3"
+                                name="q10"
+                                value="3"
+                            />
+                            <label for="q10-3">3</label>
+                            <input
+                                type="radio"
+                                id="q10-4"
+                                name="q10"
+                                value="4"
+                            />
+                            <label for="q10-4">4</label>
+                            <input
+                                type="radio"
+                                id="q10-5"
+                                name="q10"
+                                value="5"
+                            />
+                            <label for="q10-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Appropriate Use of HTML</legend>
-						<p class="small">HTML is valid and well-indented. The best tag is used for each purpose. The
-							code includes semantic HTML5 elements
-							wherever relevant. There is no unneeded or commented-out markup.</p>
-						<input type="radio" id="q10-0" name="q10" value="0">
-						<label for="q10-0">0</label>
-						<input type="radio" id="q10-1" name="q10" value="1">
-						<label for="q10-1">1</label>
-						<input type="radio" id="q10-2" name="q10" value="2">
-						<label for="q10-2">2</label>
-						<input type="radio" id="q10-3" name="q10" value="3">
-						<label for="q10-3">3</label>
-						<input type="radio" id="q10-4" name="q10" value="4">
-						<label for="q10-4">4</label>
-						<input type="radio" id="q10-5" name="q10" value="5">
-						<label for="q10-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Appropriate Use of CSS</legend>
+                            <p class="small">
+                                CSS is valid and well-indented. Ensure that CSS
+                                is in its own style block in head or in external
+                                files. There is no unnecessary duplication, nor
+                                commented out code.
+                            </p>
+                            <input
+                                type="radio"
+                                id="q11-0"
+                                name="q11"
+                                value="0"
+                            />
+                            <label for="q11-0">0</label>
+                            <input
+                                type="radio"
+                                id="q11-1"
+                                name="q11"
+                                value="1"
+                            />
+                            <label for="q11-1">1</label>
+                            <input
+                                type="radio"
+                                id="q11-2"
+                                name="q11"
+                                value="2"
+                            />
+                            <label for="q11-2">2</label>
+                            <input
+                                type="radio"
+                                id="q11-3"
+                                name="q11"
+                                value="3"
+                            />
+                            <label for="q11-3">3</label>
+                            <input
+                                type="radio"
+                                id="q11-4"
+                                name="q11"
+                                value="4"
+                            />
+                            <label for="q11-4">4</label>
+                            <input
+                                type="radio"
+                                id="q11-5"
+                                name="q11"
+                                value="5"
+                            />
+                            <label for="q11-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Appropriate Use of CSS</legend>
-						<p class="small">CSS is valid and well-indented. Ensure that CSS is in its own style block in
-							head or in external files. There is no
-							unnecessary duplication, nor commented out code.</p>
-						<input type="radio" id="q11-0" name="q11" value="0">
-						<label for="q11-0">0</label>
-						<input type="radio" id="q11-1" name="q11" value="1">
-						<label for="q11-1">1</label>
-						<input type="radio" id="q11-2" name="q11" value="2">
-						<label for="q11-2">2</label>
-						<input type="radio" id="q11-3" name="q11" value="3">
-						<label for="q11-3">3</label>
-						<input type="radio" id="q11-4" name="q11" value="4">
-						<label for="q11-4">4</label>
-						<input type="radio" id="q11-5" name="q11" value="5">
-						<label for="q11-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Code quality comments</legend>
+                            <p class="small">
+                                What general feedback do you have for the
+                                student about this aspect of the project? What
+                                stood out as particularly good? What can be
+                                improved? Please give the feedback in the same
+                                order as the above criteria. For each criterion
+                                give one example of what could be approved if
+                                it’s a low or average (<=3) score and one
+                                example of what is excellent if it’s a high
+                                score(>=4).
+                            </p>
+                            <textarea name="section3" cols="60"></textarea>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Code quality comments</legend>
-						<p class="small">What general feedback do you have for the student about this aspect of the
-							project? What
-							stood out as particularly good?
-							What can be improved? Please give the feedback in the same order as the above criteria. For
-							each criterion give one
-							example of what could be approved if it’s a low or average (<=3) score and one example of
-								what is excellent if it’s a high score(>=4).</p>
-						<textarea name="section3" cols=60></textarea>
-					</fieldset>
+                        <h2>Software Development Practices</h2>
 
-					<h2>Software Development Practices</h2>
+                        <fieldset>
+                            <legend>Directory Structure and File Naming</legend>
+                            <p class="small">
+                                The files in the GitHub repository are named
+                                clearly and consistently, and located in
+                                appropriately named directories. There is a
+                                clear separation between the student's files and
+                                any external files (for example, library files
+                                are all inside a directory named 'libraries').
+                                You should award "Greatly Exceeds Expectations"
+                                on this criterion if the structure and naming is
+                                at the level you would expect from an
+                                experienced professional developer.
+                            </p>
+                            <input
+                                type="radio"
+                                id="q12-0"
+                                name="q12"
+                                value="0"
+                            />
+                            <label for="q12-0">0</label>
+                            <input
+                                type="radio"
+                                id="q12-1"
+                                name="q12"
+                                value="1"
+                            />
+                            <label for="q12-1">1</label>
+                            <input
+                                type="radio"
+                                id="q12-2"
+                                name="q12"
+                                value="2"
+                            />
+                            <label for="q12-2">2</label>
+                            <input
+                                type="radio"
+                                id="q12-3"
+                                name="q12"
+                                value="3"
+                            />
+                            <label for="q12-3">3</label>
+                            <input
+                                type="radio"
+                                id="q12-4"
+                                name="q12"
+                                value="4"
+                            />
+                            <label for="q12-4">4</label>
+                            <input
+                                type="radio"
+                                id="q12-5"
+                                name="q12"
+                                value="5"
+                            />
+                            <label for="q12-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Directory Structure and File Naming</legend>
-						<p class="small">The files in the GitHub repository are named clearly and consistently, and
-							located in appropriately named directories.
-							There is a clear separation between the student's files and any external files (for example,
-							library files are all
-							inside a directory named 'libraries'). You should award "Greatly Exceeds Expectations" on
-							this criterion if the
-							structure and naming is at the level you would expect from an experienced professional
-							developer.</p>
-						<input type="radio" id="q12-0" name="q12" value="0">
-						<label for="q12-0">0</label>
-						<input type="radio" id="q12-1" name="q12" value="1">
-						<label for="q12-1">1</label>
-						<input type="radio" id="q12-2" name="q12" value="2">
-						<label for="q12-2">2</label>
-						<input type="radio" id="q12-3" name="q12" value="3">
-						<label for="q12-3">3</label>
-						<input type="radio" id="q12-4" name="q12" value="4">
-						<label for="q12-4">4</label>
-						<input type="radio" id="q12-5" name="q12" value="5">
-						<label for="q12-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Version Control</legend>
+                            <p class="small">
+                                The development was performed using git, with a
+                                commit for each meaningful change (rather than a
+                                single commit that covers everything). Commit
+                                messages are well-written.
+                            </p>
+                            <input
+                                type="radio"
+                                id="q13-0"
+                                name="q13"
+                                value="0"
+                            />
+                            <label for="q13-0">0</label>
+                            <input
+                                type="radio"
+                                id="q13-1"
+                                name="q13"
+                                value="1"
+                            />
+                            <label for="q13-1">1</label>
+                            <input
+                                type="radio"
+                                id="q13-2"
+                                name="q13"
+                                value="2"
+                            />
+                            <label for="q13-2">2</label>
+                            <input
+                                type="radio"
+                                id="q13-3"
+                                name="q13"
+                                value="3"
+                            />
+                            <label for="q13-3">3</label>
+                            <input
+                                type="radio"
+                                id="q13-4"
+                                name="q13"
+                                value="4"
+                            />
+                            <label for="q13-4">4</label>
+                            <input
+                                type="radio"
+                                id="q13-5"
+                                name="q13"
+                                value="5"
+                            />
+                            <label for="q13-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Version Control</legend>
-						<p class="small">The development was performed using git, with a commit for each meaningful
-							change (rather than a single commit that
-							covers everything). Commit messages are well-written.</p>
-						<input type="radio" id="q13-0" name="q13" value="0">
-						<label for="q13-0">0</label>
-						<input type="radio" id="q13-1" name="q13" value="1">
-						<label for="q13-1">1</label>
-						<input type="radio" id="q13-2" name="q13" value="2">
-						<label for="q13-2">2</label>
-						<input type="radio" id="q13-3" name="q13" value="3">
-						<label for="q13-3">3</label>
-						<input type="radio" id="q13-4" name="q13" value="4">
-						<label for="q13-4">4</label>
-						<input type="radio" id="q13-5" name="q13" value="5">
-						<label for="q13-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Testing Implementation</legend>
+                            <p class="small">
+                                All of the main functionality of the project has
+                                been tested using a suite of automated tests
+                                and/or well described manual testing scenarios
+                                (listed in either the readme or a separate file,
+                                or a link to a public page on an external tool,
+                                such as Trello). Consider awarding "Greatly
+                                Exceeds Expectations" if TDD practices were
+                                followed rather than having the tests written
+                                last-minute (check the commit log).
+                            </p>
+                            <input
+                                type="radio"
+                                id="q14-0"
+                                name="q14"
+                                value="0"
+                            />
+                            <label for="q14-0">0</label>
+                            <input
+                                type="radio"
+                                id="q14-1"
+                                name="q14"
+                                value="1"
+                            />
+                            <label for="q14-1">1</label>
+                            <input
+                                type="radio"
+                                id="q14-2"
+                                name="q14"
+                                value="2"
+                            />
+                            <label for="q14-2">2</label>
+                            <input
+                                type="radio"
+                                id="q14-3"
+                                name="q14"
+                                value="3"
+                            />
+                            <label for="q14-3">3</label>
+                            <input
+                                type="radio"
+                                id="q14-4"
+                                name="q14"
+                                value="4"
+                            />
+                            <label for="q14-4">4</label>
+                            <input
+                                type="radio"
+                                id="q14-5"
+                                name="q14"
+                                value="5"
+                            />
+                            <label for="q14-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Testing Implementation</legend>
-						<p class="small">All of the main functionality of the project has been tested using a suite of
-							automated tests and/or well described
-							manual testing scenarios (listed in either the readme or a separate file, or a link to a
-							public page on an external
-							tool, such as Trello). Consider awarding "Greatly Exceeds Expectations" if TDD practices
-							were followed rather than
-							having the tests written last-minute (check the commit log).</p>
-						<input type="radio" id="q14-0" name="q14" value="0">
-						<label for="q14-0">0</label>
-						<input type="radio" id="q14-1" name="q14" value="1">
-						<label for="q14-1">1</label>
-						<input type="radio" id="q14-2" name="q14" value="2">
-						<label for="q14-2">2</label>
-						<input type="radio" id="q14-3" name="q14" value="3">
-						<label for="q14-3">3</label>
-						<input type="radio" id="q14-4" name="q14" value="4">
-						<label for="q14-4">4</label>
-						<input type="radio" id="q14-5" name="q14" value="5">
-						<label for="q14-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Testing Write-up</legend>
+                            <p class="small">
+                                The testing planning, implementation, results
+                                and outcomes are described in detail, either in
+                                the readme, or a separate file. Interesting bugs
+                                discovered are discussed, and any known issues
+                                that were left unfixed (for whatever reason) are
+                                mentioned and explained.
+                            </p>
+                            <input
+                                type="radio"
+                                id="q15-0"
+                                name="q15"
+                                value="0"
+                            />
+                            <label for="q15-0">0</label>
+                            <input
+                                type="radio"
+                                id="q15-1"
+                                name="q15"
+                                value="1"
+                            />
+                            <label for="q15-1">1</label>
+                            <input
+                                type="radio"
+                                id="q15-2"
+                                name="q15"
+                                value="2"
+                            />
+                            <label for="q15-2">2</label>
+                            <input
+                                type="radio"
+                                id="q15-3"
+                                name="q15"
+                                value="3"
+                            />
+                            <label for="q15-3">3</label>
+                            <input
+                                type="radio"
+                                id="q15-4"
+                                name="q15"
+                                value="4"
+                            />
+                            <label for="q15-4">4</label>
+                            <input
+                                type="radio"
+                                id="q15-5"
+                                name="q15"
+                                value="5"
+                            />
+                            <label for="q15-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Testing Write-up</legend>
-						<p class="small">The testing planning, implementation, results and outcomes are described in
-							detail, either in the readme, or a separate
-							file. Interesting bugs discovered are discussed, and any known issues that were left unfixed
-							(for whatever reason) are
-							mentioned and explained.</p>
-						<input type="radio" id="q15-0" name="q15" value="0">
-						<label for="q15-0">0</label>
-						<input type="radio" id="q15-1" name="q15" value="1">
-						<label for="q15-1">1</label>
-						<input type="radio" id="q15-2" name="q15" value="2">
-						<label for="q15-2">2</label>
-						<input type="radio" id="q15-3" name="q15" value="3">
-						<label for="q15-3">3</label>
-						<input type="radio" id="q15-4" name="q15" value="4">
-						<label for="q15-4">4</label>
-						<input type="radio" id="q15-5" name="q15" value="5">
-						<label for="q15-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Readme File</legend>
+                            <p class="small">
+                                The project includes a readme file intended as
+                                an introduction for other developers who would
+                                like to use and contribute to this project. It
+                                should describe the project's components, the
+                                technologies used and any other important
+                                details. The file is formatted correctly using
+                                markdown (or another markup language) and is
+                                easy to read. Please note that the readme would
+                                usually contain content already assessed in
+                                other criteria (e.g. UX, testing, etc...), while
+                                this criterion is used for assessing that file
+                                as a whole.
+                            </p>
+                            <input
+                                type="radio"
+                                id="q16-0"
+                                name="q16"
+                                value="0"
+                            />
+                            <label for="q16-0">0</label>
+                            <input
+                                type="radio"
+                                id="q16-1"
+                                name="q16"
+                                value="1"
+                            />
+                            <label for="q16-1">1</label>
+                            <input
+                                type="radio"
+                                id="q16-2"
+                                name="q16"
+                                value="2"
+                            />
+                            <label for="q16-2">2</label>
+                            <input
+                                type="radio"
+                                id="q16-3"
+                                name="q16"
+                                value="3"
+                            />
+                            <label for="q16-3">3</label>
+                            <input
+                                type="radio"
+                                id="q16-4"
+                                name="q16"
+                                value="4"
+                            />
+                            <label for="q16-4">4</label>
+                            <input
+                                type="radio"
+                                id="q16-5"
+                                name="q16"
+                                value="5"
+                            />
+                            <label for="q16-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Readme File</legend>
-						<p class="small">The project includes a readme file intended as an introduction for other
-							developers who would like to use and contribute
-							to this project. It should describe the project's components, the technologies used and any
-							other important details. The
-							file is formatted correctly using markdown (or another markup language) and is easy to read.
-							Please note that the readme
-							would usually contain content already assessed in other criteria (e.g. UX, testing, etc...),
-							while this criterion is
-							used for assessing that file as a whole.</p>
-						<input type="radio" id="q16-0" name="q16" value="0">
-						<label for="q16-0">0</label>
-						<input type="radio" id="q16-1" name="q16" value="1">
-						<label for="q16-1">1</label>
-						<input type="radio" id="q16-2" name="q16" value="2">
-						<label for="q16-2">2</label>
-						<input type="radio" id="q16-3" name="q16" value="3">
-						<label for="q16-3">3</label>
-						<input type="radio" id="q16-4" name="q16" value="4">
-						<label for="q16-4">4</label>
-						<input type="radio" id="q16-5" name="q16" value="5">
-						<label for="q16-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Comments</legend>
+                            <p class="small">
+                                All code files include clear and useful
+                                comments, wherever they relevant. These comments
+                                are consistent and explain the intent, reasoning
+                                and trade-offs behind different parts of the
+                                code, rather than just repeating what the code
+                                already says.
+                            </p>
+                            <input
+                                type="radio"
+                                id="q17-0"
+                                name="q17"
+                                value="0"
+                            />
+                            <label for="q17-0">0</label>
+                            <input
+                                type="radio"
+                                id="q17-1"
+                                name="q17"
+                                value="1"
+                            />
+                            <label for="q17-1">1</label>
+                            <input
+                                type="radio"
+                                id="q17-2"
+                                name="q17"
+                                value="2"
+                            />
+                            <label for="q17-2">2</label>
+                            <input
+                                type="radio"
+                                id="q17-3"
+                                name="q17"
+                                value="3"
+                            />
+                            <label for="q17-3">3</label>
+                            <input
+                                type="radio"
+                                id="q17-4"
+                                name="q17"
+                                value="4"
+                            />
+                            <label for="q17-4">4</label>
+                            <input
+                                type="radio"
+                                id="q17-5"
+                                name="q17"
+                                value="5"
+                            />
+                            <label for="q17-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Comments</legend>
-						<p class="small">All code files include clear and useful comments, wherever they relevant. These
-							comments are consistent and explain the
-							intent, reasoning and trade-offs behind different parts of the code, rather than just
-							repeating what the code already
-							says.</p>
-						<input type="radio" id="q17-0" name="q17" value="0">
-						<label for="q17-0">0</label>
-						<input type="radio" id="q17-1" name="q17" value="1">
-						<label for="q17-1">1</label>
-						<input type="radio" id="q17-2" name="q17" value="2">
-						<label for="q17-2">2</label>
-						<input type="radio" id="q17-3" name="q17" value="3">
-						<label for="q17-3">3</label>
-						<input type="radio" id="q17-4" name="q17" value="4">
-						<label for="q17-4">4</label>
-						<input type="radio" id="q17-5" name="q17" value="5">
-						<label for="q17-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Deployment implementation</legend>
+                            <p class="small">
+                                The project and all its dependencies (e.g.
+                                database, static resources) are running live on
+                                a hosting platform such as GitHub pages or
+                                Heroku without any issues. Please note that the
+                                free accounts on some hosting platforms like
+                                Heroku may take the site down at some hours, so
+                                allow for this possibility when grading. One way
+                                to get "Greatly Exceeds Expectations" on this
+                                criterion is by entirely automating all
+                                deployment procedures, such that the assessor
+                                would be able to set everything up on their own
+                                server by running a minimal set of commands.
+                            </p>
+                            <input
+                                type="radio"
+                                id="q18-0"
+                                name="q18"
+                                value="0"
+                            />
+                            <label for="q18-0">0</label>
+                            <input
+                                type="radio"
+                                id="q18-1"
+                                name="q18"
+                                value="1"
+                            />
+                            <label for="q18-1">1</label>
+                            <input
+                                type="radio"
+                                id="q18-2"
+                                name="q18"
+                                value="2"
+                            />
+                            <label for="q18-2">2</label>
+                            <input
+                                type="radio"
+                                id="q18-3"
+                                name="q18"
+                                value="3"
+                            />
+                            <label for="q18-3">3</label>
+                            <input
+                                type="radio"
+                                id="q18-4"
+                                name="q18"
+                                value="4"
+                            />
+                            <label for="q18-4">4</label>
+                            <input
+                                type="radio"
+                                id="q18-5"
+                                name="q18"
+                                value="5"
+                            />
+                            <label for="q18-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Deployment implementation</legend>
-						<p class="small">The project and all its dependencies (e.g. database, static resources) are
-							running live on a hosting platform such as
-							GitHub pages or Heroku without any issues. Please note that the free accounts on some
-							hosting platforms like Heroku may
-							take the site down at some hours, so allow for this possibility when grading. One way to get
-							"Greatly Exceeds
-							Expectations" on this criterion is by entirely automating all deployment procedures, such
-							that the assessor would be
-							able to set everything up on their own server by running a minimal set of commands.</p>
-						<input type="radio" id="q18-0" name="q18" value="0">
-						<label for="q18-0">0</label>
-						<input type="radio" id="q18-1" name="q18" value="1">
-						<label for="q18-1">1</label>
-						<input type="radio" id="q18-2" name="q18" value="2">
-						<label for="q18-2">2</label>
-						<input type="radio" id="q18-3" name="q18" value="3">
-						<label for="q18-3">3</label>
-						<input type="radio" id="q18-4" name="q18" value="4">
-						<label for="q18-4">4</label>
-						<input type="radio" id="q18-5" name="q18" value="5">
-						<label for="q18-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>Deployment Write-up</legend>
+                            <p class="small">
+                                The project's documentation (either in the
+                                readme, or a separate file) contains a full and
+                                clear explanation of all of the steps taken to
+                                deploy this project to production hosting. Any
+                                differences between the development version and
+                                the deployed version (environment variables,
+                                separate configuration files, etc.) is fully
+                                explained.
+                            </p>
+                            <input
+                                type="radio"
+                                id="q19-0"
+                                name="q19"
+                                value="0"
+                            />
+                            <label for="q19-0">0</label>
+                            <input
+                                type="radio"
+                                id="q19-1"
+                                name="q19"
+                                value="1"
+                            />
+                            <label for="q19-1">1</label>
+                            <input
+                                type="radio"
+                                id="q19-2"
+                                name="q19"
+                                value="2"
+                            />
+                            <label for="q19-2">2</label>
+                            <input
+                                type="radio"
+                                id="q19-3"
+                                name="q19"
+                                value="3"
+                            />
+                            <label for="q19-3">3</label>
+                            <input
+                                type="radio"
+                                id="q19-4"
+                                name="q19"
+                                value="4"
+                            />
+                            <label for="q19-4">4</label>
+                            <input
+                                type="radio"
+                                id="q19-5"
+                                name="q19"
+                                value="5"
+                            />
+                            <label for="q19-5">5</label>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Deployment Write-up</legend>
-						<p class="small">The project's documentation (either in the readme, or a separate file) contains
-							a full and clear explanation of all of
-							the steps taken to deploy this project to production hosting. Any differences between the
-							development version and the
-							deployed version (environment variables, separate configuration files, etc.) is fully
-							explained.</p>
-						<input type="radio" id="q19-0" name="q19" value="0">
-						<label for="q19-0">0</label>
-						<input type="radio" id="q19-1" name="q19" value="1">
-						<label for="q19-1">1</label>
-						<input type="radio" id="q19-2" name="q19" value="2">
-						<label for="q19-2">2</label>
-						<input type="radio" id="q19-3" name="q19" value="3">
-						<label for="q19-3">3</label>
-						<input type="radio" id="q19-4" name="q19" value="4">
-						<label for="q19-4">4</label>
-						<input type="radio" id="q19-5" name="q19" value="5">
-						<label for="q19-5">5</label>
-					</fieldset>
+                        <fieldset>
+                            <legend>
+                                Software development practices comments
+                            </legend>
+                            <p class="small">
+                                What general feedback do you have for the
+                                student about this aspect of the project? What
+                                stood out as particularly good? What can be
+                                improved? Please give the feedback in the same
+                                order as the above criteria. For each criterion
+                                give one example of what could be approved if
+                                it’s a low or average (<=3) score and one
+                                example of what is excellent if it’s a high
+                                score(>=4).
+                            </p>
+                            <textarea name="section4" cols="60"></textarea>
+                        </fieldset>
 
-					<fieldset>
-						<legend>Software development practices comments</legend>
-						<p class="small">What general feedback do you have for the student about this aspect of the
-							project? What
-							stood out as particularly good?
-							What can be improved? Please give the feedback in the same order as the above criteria. For
-							each criterion give one
-							example of what could be approved if it’s a low or average (<=3) score and one example of
-								what is excellent if it’s a high score(>=4).</p>
-						<textarea name="section4" cols=60></textarea>
-					</fieldset>
+                        <h2>Overall assessment</h2>
 
-					<h2>Overall assessment</h2>
+                        <fieldset>
+                            <legend>
+                                Failing criteria - the project should receive a
+                                failing grade because:
+                            </legend>
+                            <p class="small">
+                                You should mark one of these options to indicate
+                                that project does not deserve a passing grade in
+                                its current state (regardless of any other
+                                criteria) and should be fixed before it can be
+                                resubmitted. Regardless of these failing
+                                criteria, please complete the rest of the
+                                assessment too, so that the student will be able
+                                to address the entirety of the feedback as part
+                                of their fixes.
+                            </p>
+                            <input type="checkbox" id="fail1" />
+                            <label for="fail1"
+                                >The README.md is absent or is missing basic
+                                information</label
+                            >
+                            <br />
+                            <input type="checkbox" id="fail2" />
+                            <label for="fail2"
+                                >The project plagiarises others' work without
+                                any attribution</label
+                            >
+                            <br />
+                            <input type="checkbox" id="fail3" />
+                            <label for="fail3"
+                                >The deployed version is markedly different from
+                                the source code that was submitted</label
+                            >
+                            <br />
+                            <input type="checkbox" id="fail4" />
+                            <label for="fail4"
+                                >The project doesn't use one of the main
+                                technologies taught in the stream.</label
+                            >
+                            <br />
+                            <input type="checkbox" id="fail5" />
+                            <label for="fail5">Other</label
+                            ><input
+                                type="text"
+                                name="fail5text"
+                                id="fail5text"
+                            />
+                            <input
+                                type="hidden"
+                                id="failreasons"
+                                name="failreasons"
+                            />
+                        </fieldset>
 
-					<fieldset>
-						<legend>Failing criteria - the project should receive a failing grade because:</legend>
-						<p class="small">You should mark one of these options to indicate that project does not deserve
-							a passing grade in its current state
-							(regardless of any other criteria) and should be fixed before it can be resubmitted.
-							Regardless of these failing
-							criteria, please complete the rest of the assessment too, so that the student will be able
-							to address the entirety of
-							the feedback as part of their fixes.</p>
-						<input type="checkbox" name="fail1" id="fail1">
-						<label for="fail1">The README.md is absent or is missing basic information</label>
-						<br>
-						<input type="checkbox" name="fail2" id="fail2">
-						<label for="fail2">The project plagiarises others' work without any attribution</label>
-						<br>
-						<input type="checkbox" name="fail3" id="fail3">
-						<label for="fail3">The deployed version is markedly different from the source code that was submitted</label>
-						<br>
-						<input type="checkbox" name="fail4" id="fail4">
-						<label for="fail4">The project doesn't use one of the main technologies taught in the stream.</label>
-						<br>
-						<input type="checkbox" name="fail5" id="fail5">
-						<label for="fail5">Other</label><input type="text" name="fail5text">
+                        <fieldset>
+                            <legend>Overall Comments</legend>
+                            <p class="small">
+                                Overall feedback about the project. Please
+                                provide a paragraph or two to summarise your
+                                assessment.
+                            </p>
+                            <textarea name="section5" cols="60"></textarea>
+                        </fieldset>
 
-					</fieldset>
+                        <fieldset>
+                            <legend>Data Policy</legend>
+                            <input
+                                type="checkbox"
+                                name="data1"
+                                id="data1"
+                                required
+                            />
+                            <label for="data1"
+                                >I hereby declare that I have assessed the
+                                student's project carefully to the best of my
+                                ability without any bias</label
+                            >
+                            <br />
+                            <input
+                                type="checkbox"
+                                name="data2"
+                                id="data2"
+                                required
+                            />
+                            <label for="data"
+                                >I consent to Code Institute storing my
+                                responses to this form, to be used for providing
+                                the assessment results to the student, and
+                                allowing for later appeal</label
+                            >
+                        </fieldset>
+                    </form>
+                    <button id="sendForm">Submit</button>
+                </div>
+            </div>
+        </div>
 
-						<fieldset>
-							<legend>Overall Comments</legend>
-							<p class="small">Overall feedback about the project. Please provide a paragraph or two to
-								summarise your assessment.</p>
-							<textarea name="section5" cols=60></textarea>
-						</fieldset>
-
-						<fieldset>
-							<legend>Data Policy</legend>
-							<input type="checkbox" name="data1" id="data1" required>
-							<label for="data1">I hereby declare that I have assessed the student's project carefully to the best of my ability without any bias</label>
-							<br>
-							<input type="checkbox" name="data2" id="data2" required>
-							<label for="data">I consent to Code Institute storing my responses to this form, to be used for providing the assessment results to the
-						student, and allowing for later appeal</label>
-						</fieldset>
-
-				</form>
-				<button id="sendForm">Submit</button>
-			</div>
-		</div>
-	</div>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-	<script src="js/script.js"></script>
-</body>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
 </html>
