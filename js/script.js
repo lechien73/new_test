@@ -27,36 +27,43 @@ if (url.searchParams.get("sid")) {
     document.getElementById("student_id").innerText = url.searchParams.get(
         "sid"
     );
+    document.getElementById("sid").value = url.searchParams.get("sid");
 }
 
 if (url.searchParams.get("rid")) {
     document.getElementById("record_id").innerText = url.searchParams.get(
         "rid"
     );
+    document.getElementById("rid").value = url.searchParams.get("rid");
 }
 
 if (url.searchParams.get("gh")) {
     document.getElementById("github_url").innerText = url.searchParams.get(
         "gh"
     );
+    document.getElementById("gh").value = url.searchParams.get("gh");
 }
 
 if (url.searchParams.get("ll")) {
     document.getElementById("live_url").innerText = url.searchParams.get("ll");
+    document.getElementById("ll").value = url.searchParams.get("ll");
 }
 
-document.getElementById("sendForm").addEventListener("click", function() {
-
-    req1 = document.getElementById("data1")
-    req2 = document.getElementById("data2")
+document.getElementById("sendForm").addEventListener("click", function () {
+    req1 = document.getElementById("data1");
+    req2 = document.getElementById("data2");
 
     if (count == completed && req1.checked && req2.checked) {
-        score = document.getElementById("score").innerText
-        if (confirm(`You are about to submit this assessment, giving an overall grade of ${score}\nAre you sure?`)) {
+        score = document.getElementById("score").innerText;
+        if (
+            confirm(
+                `You are about to submit this assessment, giving an overall grade of ${score}\nAre you sure?`
+            )
+        ) {
             document.getElementById("assessmentForm").submit();
-            window.location("thanks.html")
+            window.location("thanks.html");
         }
     } else {
-        alert("You have not completed all of the required questions")
+        alert("You have not completed all of the required questions");
     }
-})
+});
