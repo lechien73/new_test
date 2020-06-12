@@ -1,5 +1,5 @@
 body {
-    padding-top: 70px;
+    padding-top: 80px;
 }
 
 input {
@@ -10,7 +10,7 @@ input {
 header {
     background: #eee;
     position: fixed;
-    height: 70px;
+    height: 80px;
     width: 100%;
     top: 0;
     z-index: 10;

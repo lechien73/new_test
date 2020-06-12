@@ -3,6 +3,8 @@ let url = new URL(document.URL);
 let completed;
 let count;
 
+let level = document.getElementById("level");
+
 for (let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener("click", function () {
         let radios = document.querySelectorAll('[type="radio"]');
@@ -18,6 +20,9 @@ for (let i = 0; i < inputs.length; i++) {
         }
         document.getElementById("completed").innerText =
             completed + "/" + count;
+        if (runningTotal >= 50) level.innerText = "Pass";
+        if (runningTotal >= 65) level.innerText = "Merit";
+        if (runningTotal >= 80) level.innerText = "Distinction";
         document.getElementById("score").innerText =
             runningTotal.toFixed(2) + "%";
     });
