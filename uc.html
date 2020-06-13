@@ -47,6 +47,21 @@
                         method="POST"
                         action="https://ci-postproxy.herokuapp.com/"
                     >
+                        <input
+                            type="hidden"
+                            name="x_webhook"
+                            value="https://hooks.zapier.com/hooks/catch/4753778/osgg2e0/silent/"
+                        />
+                        <input
+                            type="hidden"
+                            name="x_success"
+                            value="https://lechien73.github.io/new_test/thankyou.html"
+                        />
+                        <input
+                            type="hidden"
+                            name="x_failure"
+                            value="https://lechien73.github.io/new_test/error.html"
+                        />
                         <input type="hidden" name="sid" id="sid" />
                         <input type="hidden" name="rid" id="rid" />
                         <input type="hidden" name="gh" id="gh" />
