@@ -1,17 +1,42 @@
 body {
     padding-top: 80px;
-}
-
-input {
-    display: inline-block;
-    margin-left: 10px;
+    background: #ede7f6;
 }
 
 header {
-    background: #eee;
+    background: rgb(53, 67, 83);
+    color: white;
     position: fixed;
     height: 80px;
     width: 100%;
     top: 0;
     z-index: 10;
+}
+
+h2,
+h3 {
+    padding-top: 5px;
+}
+
+/* Form Layout */
+
+.radios {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.text-label {
+    width: 200px;
+}
+
+fieldset {
+    border: 1px solid gainsboro;
+    padding: 10px;
+    background: white;
+}
+
+legend {
+    width: inherit;
+    background: transparent;
+    padding: 5px;
 }

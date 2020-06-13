@@ -13,7 +13,7 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
         />
         <link rel="stylesheet" href="css/style.css" />
-        <title>User Centric Front End Development</title>
+        <title>Interactive Front End Development</title>
     </head>
 
     <body>
@@ -62,13 +62,12 @@
                             name="x_failure"
                             value="https://lechien73.github.io/new_test/error.html"
                         />
-                        <input type="hidden" name="x_data" value="sid,email" />
                         <input type="hidden" name="sid" id="sid" />
                         <input type="hidden" name="rid" id="rid" />
                         <input type="hidden" name="gh" id="gh" />
                         <input type="hidden" name="ll" id="ll" />
                         <input type="hidden" name="timestamp" id="timestamp" />
-                        <h2>User Centric Front End Development</h2>
+                        <h2>Interactive Front End Development</h2>
                         <fieldset>
                             <legend>Assessor Details</legend>
                             <label class="text-label" for="email"
@@ -439,36 +438,16 @@
                         </fieldset>
 
                         <fieldset>
-                            <legend>
-                                Usability and real-world application comments
-                            </legend>
+                            <legend>Defensive design</legend>
                             <p class="small">
-                                What general feedback do you have for the
-                                student about this aspect of the project? What
-                                stood out as particularly good? What can be
-                                improved? Please give the feedback in the same
-                                order as the above criteria. For each criterion
-                                give one example of what could be approved if
-                                it’s a low or average (<=3) score and one
-                                example of what is excellent if it’s a high
-                                score(>=4).
-                            </p>
-                            <textarea name="section1" cols="60"></textarea>
-                        </fieldset>
-
-                        <h3>Layout and Visual Impact</h3>
-
-                        <fieldset>
-                            <legend>Responsive Design</legend>
-                            <p class="small">
-                                Check the site on multiple device sizes. The
-                                site should incorporate use of Bootstrap grid
-                                classes or CSS media queries to ensure that
-                                markup reflows well to fit on all screen sizes.
-                                One way to get "Greatly Exceeds Expectations" on
-                                this criterion is by using customised elements
-                                for different screen sizes to effectively adapt
-                                the interface to the device.
+                                If and when a user performs any illegal action
+                                on the site (e.g. attempts to submit an
+                                incomplete form), the site should deny the
+                                action and respond by providing clear feedback
+                                to the user, informing them of what they'd done
+                                wrong. No user action should be able to cause an
+                                internal error message to display (in the page
+                                body, console, alert, etc...).
                             </p>
                             <input
                                 type="radio"
@@ -521,11 +500,36 @@
                         </fieldset>
 
                         <fieldset>
-                            <legend>Image Presentation</legend>
+                            <legend>
+                                Usability and real-world application comments
+                            </legend>
                             <p class="small">
-                                Images and graphics are in proportion and
-                                consistent in their dimensions and resolution
-                                unless deliberately modified.
+                                What general feedback do you have for the
+                                student about this aspect of the project? What
+                                stood out as particularly good? What can be
+                                improved? Please give the feedback in the same
+                                order as the above criteria. For each criterion
+                                give one example of what could be approved if
+                                it’s a low or average (<=3) score and one
+                                example of what is excellent if it’s a high
+                                score(>=4).
+                            </p>
+                            <textarea name="section1" cols="60"></textarea>
+                        </fieldset>
+
+                        <h3>Layout and Visual Impact</h3>
+
+                        <fieldset>
+                            <legend>Responsive Design</legend>
+                            <p class="small">
+                                Check the site on multiple device sizes. The
+                                site should incorporate use of Bootstrap grid
+                                classes or CSS media queries to ensure that
+                                markup reflows well to fit on all screen sizes.
+                                One way to get "Greatly Exceeds Expectations" on
+                                this criterion is by using customised elements
+                                for different screen sizes to effectively adapt
+                                the interface to the device.
                             </p>
                             <input
                                 type="radio"
@@ -578,14 +582,11 @@
                         </fieldset>
 
                         <fieldset>
-                            <legend>Colour Scheme and Typography</legend>
+                            <legend>Image Presentation</legend>
                             <p class="small">
-                                The colour scheme used on the site is
-                                consistent, and never hinders readability, or in
-                                any way obscures the content. The font typeface
-                                and size is appropriate for the purpose. All
-                                formatting is readable and consistent unless
-                                deliberately modified.
+                                Images and graphics are in proportion and
+                                consistent in their dimensions and resolution
+                                unless deliberately modified.
                             </p>
                             <input
                                 type="radio"
@@ -638,30 +639,14 @@
                         </fieldset>
 
                         <fieldset>
-                            <legend>Layout and visual impact comments</legend>
+                            <legend>Colour Scheme and Typography</legend>
                             <p class="small">
-                                What general feedback do you have for the
-                                student about this aspect of the project? What
-                                stood out as particularly good? What can be
-                                improved? Please give the feedback in the same
-                                order as the above criteria. For each criterion
-                                give one example of what could be approved if
-                                it’s a low or average (<=3) score and one
-                                example of what is excellent if it’s a high
-                                score(>=4).
-                            </p>
-                            <textarea name="section2" cols="60"></textarea>
-                        </fieldset>
-
-                        <h3>Code Quality</h3>
-
-                        <fieldset>
-                            <legend>Appropriate Use of HTML</legend>
-                            <p class="small">
-                                HTML is valid and well-indented. The best tag is
-                                used for each purpose. The code includes
-                                semantic HTML5 elements wherever relevant. There
-                                is no unneeded or commented-out markup.
+                                The colour scheme used on the site is
+                                consistent, and never hinders readability, or in
+                                any way obscures the content. The font typeface
+                                and size is appropriate for the purpose. All
+                                formatting is readable and consistent unless
+                                deliberately modified.
                             </p>
                             <input
                                 type="radio"
@@ -714,12 +699,30 @@
                         </fieldset>
 
                         <fieldset>
-                            <legend>Appropriate Use of CSS</legend>
+                            <legend>Layout and visual impact comments</legend>
                             <p class="small">
-                                CSS is valid and well-indented. Ensure that CSS
-                                is in its own style block in head or in external
-                                files. There is no unnecessary duplication, nor
-                                commented out code.
+                                What general feedback do you have for the
+                                student about this aspect of the project? What
+                                stood out as particularly good? What can be
+                                improved? Please give the feedback in the same
+                                order as the above criteria. For each criterion
+                                give one example of what could be approved if
+                                it’s a low or average (<=3) score and one
+                                example of what is excellent if it’s a high
+                                score(>=4).
+                            </p>
+                            <textarea name="section2" cols="60"></textarea>
+                        </fieldset>
+
+                        <h3>Code Quality</h3>
+
+                        <fieldset>
+                            <legend>Appropriate Use of HTML</legend>
+                            <p class="small">
+                                HTML is valid and well-indented. The best tag is
+                                used for each purpose. The code includes
+                                semantic HTML5 elements wherever relevant. There
+                                is no unneeded or commented-out markup.
                             </p>
                             <input
                                 type="radio"
@@ -772,36 +775,12 @@
                         </fieldset>
 
                         <fieldset>
-                            <legend>Code quality comments</legend>
+                            <legend>Appropriate Use of CSS</legend>
                             <p class="small">
-                                What general feedback do you have for the
-                                student about this aspect of the project? What
-                                stood out as particularly good? What can be
-                                improved? Please give the feedback in the same
-                                order as the above criteria. For each criterion
-                                give one example of what could be approved if
-                                it’s a low or average (<=3) score and one
-                                example of what is excellent if it’s a high
-                                score(>=4).
-                            </p>
-                            <textarea name="section3" cols="60"></textarea>
-                        </fieldset>
-
-                        <h3>Software Development Practices</h3>
-
-                        <fieldset>
-                            <legend>Directory Structure and File Naming</legend>
-                            <p class="small">
-                                The files in the GitHub repository are named
-                                clearly and consistently, and located in
-                                appropriately named directories. There is a
-                                clear separation between the student's files and
-                                any external files (for example, library files
-                                are all inside a directory named 'libraries').
-                                You should award "Greatly Exceeds Expectations"
-                                on this criterion if the structure and naming is
-                                at the level you would expect from an
-                                experienced professional developer.
+                                CSS is valid and well-indented. Ensure that CSS
+                                is in its own style block in head or in external
+                                files. There is no unnecessary duplication, nor
+                                commented out code.
                             </p>
                             <input
                                 type="radio"
@@ -854,12 +833,15 @@
                         </fieldset>
 
                         <fieldset>
-                            <legend>Version Control</legend>
+                            <legend>Appropriate Use of JavaScript</legend>
                             <p class="small">
-                                The development was performed using git, with a
-                                commit for each meaningful change (rather than a
-                                single commit that covers everything). Commit
-                                messages are well-written.
+                                JS is valid and well-indented. Any non-trivial
+                                JS appears in external files and linked to
+                                either in the head or bottom of the body
+                                element. Student displays solid understanding of
+                                JS logic and there are no bugs or unneeded
+                                complexity, as well as no commented-out code. No
+                                errors appear in the JS console.
                             </p>
                             <input
                                 type="radio"
@@ -912,17 +894,16 @@
                         </fieldset>
 
                         <fieldset>
-                            <legend>Testing Implementation</legend>
+                            <legend>Appropriate Use of JavaScript APIs</legend>
                             <p class="small">
-                                All of the main functionality of the project has
-                                been tested using a suite of automated tests
-                                and/or well described manual testing scenarios
-                                (listed in either the readme or a separate file,
-                                or a link to a public page on an external tool,
-                                such as Trello). Consider awarding "Greatly
-                                Exceeds Expectations" if TDD practices were
-                                followed rather than having the tests written
-                                last-minute (check the commit log).
+                                JS code that uses external and/or internal APIs
+                                (e.g. TMDb, Google Maps, Canvas, dc.js, etc.) is
+                                well designed and implemented. There is a clear
+                                separation between input logic, processing, and
+                                presentation logic. There are no bugs or
+                                unneeded complexity, as well as no commented-out
+                                code. The student displays solid understanding
+                                of asynchronicity and callbacks.
                             </p>
                             <input
                                 type="radio"
@@ -975,14 +956,36 @@
                         </fieldset>
 
                         <fieldset>
-                            <legend>Testing Write-up</legend>
+                            <legend>Code quality comments</legend>
                             <p class="small">
-                                The testing planning, implementation, results
-                                and outcomes are described in detail, either in
-                                the readme, or a separate file. Interesting bugs
-                                discovered are discussed, and any known issues
-                                that were left unfixed (for whatever reason) are
-                                mentioned and explained.
+                                What general feedback do you have for the
+                                student about this aspect of the project? What
+                                stood out as particularly good? What can be
+                                improved? Please give the feedback in the same
+                                order as the above criteria. For each criterion
+                                give one example of what could be approved if
+                                it’s a low or average (<=3) score and one
+                                example of what is excellent if it’s a high
+                                score(>=4).
+                            </p>
+                            <textarea name="section3" cols="60"></textarea>
+                        </fieldset>
+
+                        <h3>Software Development Practices</h3>
+
+                        <fieldset>
+                            <legend>Directory Structure and File Naming</legend>
+                            <p class="small">
+                                The files in the GitHub repository are named
+                                clearly and consistently, and located in
+                                appropriately named directories. There is a
+                                clear separation between the student's files and
+                                any external files (for example, library files
+                                are all inside a directory named 'libraries').
+                                You should award "Greatly Exceeds Expectations"
+                                on this criterion if the structure and naming is
+                                at the level you would expect from an
+                                experienced professional developer.
                             </p>
                             <input
                                 type="radio"
@@ -1035,20 +1038,12 @@
                         </fieldset>
 
                         <fieldset>
-                            <legend>Readme File</legend>
+                            <legend>Version Control</legend>
                             <p class="small">
-                                The project includes a readme file intended as
-                                an introduction for other developers who would
-                                like to use and contribute to this project. It
-                                should describe the project's components, the
-                                technologies used and any other important
-                                details. The file is formatted correctly using
-                                markdown (or another markup language) and is
-                                easy to read. Please note that the readme would
-                                usually contain content already assessed in
-                                other criteria (e.g. UX, testing, etc...), while
-                                this criterion is used for assessing that file
-                                as a whole.
+                                The development was performed using git, with a
+                                commit for each meaningful change (rather than a
+                                single commit that covers everything). Commit
+                                messages are well-written.
                             </p>
                             <input
                                 type="radio"
@@ -1101,14 +1096,17 @@
                         </fieldset>
 
                         <fieldset>
-                            <legend>Comments</legend>
+                            <legend>Testing Implementation</legend>
                             <p class="small">
-                                All code files include clear and useful
-                                comments, wherever they relevant. These comments
-                                are consistent and explain the intent, reasoning
-                                and trade-offs behind different parts of the
-                                code, rather than just repeating what the code
-                                already says.
+                                All of the main functionality of the project has
+                                been tested using a suite of automated tests
+                                and/or well described manual testing scenarios
+                                (listed in either the readme or a separate file,
+                                or a link to a public page on an external tool,
+                                such as Trello). Consider awarding "Greatly
+                                Exceeds Expectations" if TDD practices were
+                                followed rather than having the tests written
+                                last-minute (check the commit log).
                             </p>
                             <input
                                 type="radio"
@@ -1161,20 +1159,14 @@
                         </fieldset>
 
                         <fieldset>
-                            <legend>Deployment implementation</legend>
+                            <legend>Testing Write-up</legend>
                             <p class="small">
-                                The project and all its dependencies (e.g.
-                                database, static resources) are running live on
-                                a hosting platform such as GitHub pages or
-                                Heroku without any issues. Please note that the
-                                free accounts on some hosting platforms like
-                                Heroku may take the site down at some hours, so
-                                allow for this possibility when grading. One way
-                                to get "Greatly Exceeds Expectations" on this
-                                criterion is by entirely automating all
-                                deployment procedures, such that the assessor
-                                would be able to set everything up on their own
-                                server by running a minimal set of commands.
+                                The testing planning, implementation, results
+                                and outcomes are described in detail, either in
+                                the readme, or a separate file. Interesting bugs
+                                discovered are discussed, and any known issues
+                                that were left unfixed (for whatever reason) are
+                                mentioned and explained.
                             </p>
                             <input
                                 type="radio"
@@ -1227,16 +1219,20 @@
                         </fieldset>
 
                         <fieldset>
-                            <legend>Deployment Write-up</legend>
+                            <legend>Readme File</legend>
                             <p class="small">
-                                The project's documentation (either in the
-                                readme, or a separate file) contains a full and
-                                clear explanation of all of the steps taken to
-                                deploy this project to production hosting. Any
-                                differences between the development version and
-                                the deployed version (environment variables,
-                                separate configuration files, etc.) is fully
-                                explained.
+                                The project includes a readme file intended as
+                                an introduction for other developers who would
+                                like to use and contribute to this project. It
+                                should describe the project's components, the
+                                technologies used and any other important
+                                details. The file is formatted correctly using
+                                markdown (or another markup language) and is
+                                easy to read. Please note that the readme would
+                                usually contain content already assessed in
+                                other criteria (e.g. UX, testing, etc...), while
+                                this criterion is used for assessing that file
+                                as a whole.
                             </p>
                             <input
                                 type="radio"
@@ -1286,6 +1282,194 @@
                                 value="5"
                             />
                             <label for="q19-5">5</label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Comments</legend>
+                            <p class="small">
+                                All code files include clear and useful
+                                comments, wherever they relevant. These comments
+                                are consistent and explain the intent, reasoning
+                                and trade-offs behind different parts of the
+                                code, rather than just repeating what the code
+                                already says.
+                            </p>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q20-0"
+                                name="q20"
+                                value="0"
+                            />
+                            <label for="q20-0">0</label>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q20-1"
+                                name="q20"
+                                value="1"
+                            />
+                            <label for="q20-1">1</label>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q20-2"
+                                name="q20"
+                                value="2"
+                            />
+                            <label for="q20-2">2</label>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q20-3"
+                                name="q20"
+                                value="3"
+                            />
+                            <label for="q20-3">3</label>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q20-4"
+                                name="q20"
+                                value="4"
+                            />
+                            <label for="q20-4">4</label>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q20-5"
+                                name="q20"
+                                value="5"
+                            />
+                            <label for="q20-5">5</label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Deployment implementation</legend>
+                            <p class="small">
+                                The project and all its dependencies (e.g.
+                                database, static resources) are running live on
+                                a hosting platform such as GitHub pages or
+                                Heroku without any issues. Please note that the
+                                free accounts on some hosting platforms like
+                                Heroku may take the site down at some hours, so
+                                allow for this possibility when grading. One way
+                                to get "Greatly Exceeds Expectations" on this
+                                criterion is by entirely automating all
+                                deployment procedures, such that the assessor
+                                would be able to set everything up on their own
+                                server by running a minimal set of commands.
+                            </p>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q21-0"
+                                name="q21"
+                                value="0"
+                            />
+                            <label for="q21-0">0</label>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q21-1"
+                                name="q21"
+                                value="1"
+                            />
+                            <label for="q21-1">1</label>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q21-2"
+                                name="q21"
+                                value="2"
+                            />
+                            <label for="q21-2">2</label>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q21-3"
+                                name="q21"
+                                value="3"
+                            />
+                            <label for="q21-3">3</label>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q21-4"
+                                name="q21"
+                                value="4"
+                            />
+                            <label for="q21-4">4</label>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q21-5"
+                                name="q21"
+                                value="5"
+                            />
+                            <label for="q21-5">5</label>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Deployment Write-up</legend>
+                            <p class="small">
+                                The project's documentation (either in the
+                                readme, or a separate file) contains a full and
+                                clear explanation of all of the steps taken to
+                                deploy this project to production hosting. Any
+                                differences between the development version and
+                                the deployed version (environment variables,
+                                separate configuration files, etc.) is fully
+                                explained.
+                            </p>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q22-0"
+                                name="q22"
+                                value="0"
+                            />
+                            <label for="q22-0">0</label>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q22-1"
+                                name="q22"
+                                value="1"
+                            />
+                            <label for="q22-1">1</label>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q22-2"
+                                name="q22"
+                                value="2"
+                            />
+                            <label for="q22-2">2</label>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q22-3"
+                                name="q22"
+                                value="3"
+                            />
+                            <label for="q22-3">3</label>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q22-4"
+                                name="q22"
+                                value="4"
+                            />
+                            <label for="q22-4">4</label>
+                            <input
+                                type="radio"
+                                class="radios"
+                                id="q22-5"
+                                name="q22"
+                                value="5"
+                            />
+                            <label for="q22-5">5</label>
                         </fieldset>
 
                         <fieldset>
