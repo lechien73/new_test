@@ -6,6 +6,15 @@
         <title>Success!</title>
     </head>
     <body>
-        <h1>Thank you!</h1>
+        <h1>Thank you for submitting the project for <span id="sid"></span></h1>
+        <p>Your email address is <span id="email"></span></p>
+
+        <script>
+            let url = new URL(document.URL);
+
+            for (let p of url.searchParams) {
+                document.getElementById(p[0]).innerText = p[1];
+            }
+        </script>
     </body>
 </html>
