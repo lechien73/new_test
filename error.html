@@ -6,6 +6,15 @@
         <title>Success!</title>
     </head>
     <body>
-        <h1>Error</h1>
+        <h1>Error: <span id="code"></span></h1>
     </body>
+    <script>
+        let url = new URL(document.URL);
+
+        if (url.searchParams.get("code")) {
+            document.getElementById("code").innerText = url.searchParams.get(
+                "code"
+            );
+        }
+    </script>
 </html>
